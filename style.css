@@ -1,0 +1,13 @@
+/*
+Theme Name: FP Test
+Theme URI: http://joshuahackett.com
+Author: Joshua Hackett
+Author URI: http://joshuahackett.com
+Description: A clean, distraction-free, magazine-style reading experience intended for student media outlets.
+Version: 3.0
+*/
+
+/*Import other stylesheets*/
+
+@import url('css/main.css');
+@import url('css/responsive.css');

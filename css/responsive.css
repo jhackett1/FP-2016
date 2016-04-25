@@ -1,0 +1,39 @@
+@media screen and (max-width: 1000px) {
+  section#main-bar nav div {
+    display: none; }
+  section#main-bar img {
+    height: 34px !important; }
+  section#main-bar i {
+    display: inline-block !important; }
+
+  #mobilehide, .mobilehide {
+    display: none !important; } }
+@media screen and (max-width: 800px) {
+  section#top-bar {
+    display: none; }
+
+  div.tile-row {
+    flex-direction: column !important; }
+    div.tile-row div.post-tile, div.tile-row div.review-tile, div.tile-row div.comment-tile {
+      margin-right: 0px !important;
+      margin-bottom: 20px; }
+
+  div.heros#triplet:nth-of-type(2) {
+    display: none; }
+
+  div.heros {
+    flex-direction: column !important; }
+
+  div.hero-box {
+    width: 100% !important;
+    margin-bottom: 20px;
+    height: 250px; }
+    div.hero-box div.overlay {
+      height: 200px; } }
+@media screen and (max-width: 600px) {
+  div.hero-box {
+    height: 300px !important; }
+    div.hero-box div.overlay {
+      height: 150px; } }
+
+/*# sourceMappingURL=responsive.css.map */
