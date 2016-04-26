@@ -92,10 +92,12 @@
         if (jQuery(window).scrollTop() > navpos.top) {
           jQuery('#main-bar').addClass('fixed');
           jQuery('.site-logo').addClass('smaller');
+          jQuery('body').css("margin-top", "34px");
          }
          else {
            jQuery('#main-bar').removeClass('fixed');
           jQuery('.site-logo').removeClass('smaller');
+          jQuery('body').css("margin-top", "0px");
          }
       });
   });

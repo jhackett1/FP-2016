@@ -1,4 +1,7 @@
 <?php get_header(); ?>
+
+<section class="single">
+
 <?php if(have_posts()) :
   while(have_posts()) :
     the_post();
@@ -6,13 +9,8 @@
     $feat = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
 ?>
 
-  <section class="featured-header" style="background-image:url(<?php echo $feat; ?>)"></section>
-
-<section class="single">
-
-
-
   <meta name="twitter:description" content="<?php echo get_the_excerpt(); ?>">
+
 
 
     <article id="post-<?php the_id(); ?>">
@@ -52,6 +50,8 @@
         <?php }; ?>
         <h4>By  <?php  the_author_posts_link(); ?>  |  <?php the_category(", ") ?> | <i class="fa fa-calendar"></i> <?php the_date('d M Y'); ?></h4>
       </div>
+
+      <img src="<?php echo $feat; ?>" class="featured"/>
 
       <?php the_content(); ?>
       <?php comments_template( $file, $separate_comments ); ?>
