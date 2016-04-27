@@ -1,3 +1,5 @@
+// Fixes for landscape tablets and smaller
+
 @media screen and (max-width: 1000px)
   section#main-bar
     nav
@@ -13,6 +15,13 @@
   #mobilehide, .mobilehide
     display: none !important
 
+  article div.wp-caption
+    p.wp-caption-text
+      font-size: 0.9em !important
+      margin: 2px 0px 30px 0px !important
+
+
+// Fixes for portrait tablets and smaller
 @media screen and (max-width: 800px)
   section#top-bar
     display: none
@@ -38,7 +47,37 @@
     div.overlay
       height: 200px
 
+  section.single
+    padding: 10px
 
+    article
+
+      p:first-of-type
+        font-size: 1.3em
+        margin: 20px 0px 20px 0px
+
+      p
+        font-size: 1.1em
+
+
+  section.featured-header
+    height: 107vh
+
+    div.overlay
+      div.meta
+        margin: 20px auto
+        padding: 15px
+
+        h4
+          font-size: 1em
+
+        h4 p
+          font-size: 0.9em
+
+        h2
+          font-size: 2em
+
+// Fixes for mobiles and smaller
 @media screen and (max-width: 600px)
 
   div.hero-box
@@ -46,3 +85,29 @@
 
     div.overlay
       height: 150px
+
+  article div.wp-caption.alignright,   article div.wp-caption.alignleft,   article div.wp-caption.alignnone, article div.wp-caption.aligncenter
+    float: none
+    margin: 20px 0px 20px 0px
+    max-width: 100%
+
+  section.single
+    article
+
+      blockquote p
+        width: 100%
+        max-width: 100%
+
+// Fixes for larger screens and bigger
+@media screen and (min-width: 1400px)
+
+  section.featured-header
+    div.overlay
+      div.meta
+        padding-bottom: 30px
+
+        h4
+          font-size: 1.2em
+
+        h2
+          font-size: 3.5em

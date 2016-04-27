@@ -17,6 +17,10 @@ $max-width: 1000px
   margin: 0
   box-sizing: border-box
 
+::selection
+  background-color: rgba(59,90,134,0.8)
+  color: $background-color
+
 h1, h2, h3, h4, h5
   font-family: $h-font-stack
 
@@ -27,6 +31,9 @@ p
 a
   color: $blue
   text-decoration: none
+
+a:hover
+  text-decoration: underline
 
 body
   background-color: $background-color
@@ -43,6 +50,11 @@ body
 header
   box-shadow: 0px 0px 10px rgba(0,0,0,0.2)
   width: 100%
+  position: relative
+  z-index: 10
+
+  a:hover
+    text-decoration: none
 
   section#top-bar
     width: 100%
@@ -238,16 +250,6 @@ article#front
         -o-filter: brightness(0.9)
         filter: brightness(0.9)
 
-      div.overlay
-        position: absolute
-        width: 100%
-        height: 130px
-        z-index: 2
-        background-color: $dark-blue
-        mix-blend-mode: overlay
-        bottom: 0
-        pointer-events: none
-
       div.title
         position: absolute
         width: 100%
@@ -255,6 +257,7 @@ article#front
         bottom: 0
         padding: 20px
         pointer-events: none
+        background-color: rgba(36, 67, 114, 0.7)
 
         h2
           color: $background-color
@@ -450,7 +453,7 @@ article#front
         background-color: rgba(59,90,134,0.1)
 
       img.speechmark
-        float:left
+        float: left
         height: 50px
         margin-right: 15px
 
@@ -542,6 +545,9 @@ div.tile-row
   justify-content: flex-start
   padding: 0px !important
 
+  a:hover
+    text-decoration: none
+
   h3
     color: $background-color
     font-family: $h-font-stack
@@ -601,10 +607,11 @@ nav#mobile
       align-items: center
       justify-content: center
       margin-bottom: 30px
+      margin-top: -20px
 
   nav
     li
-      font-size: 1.5em
+      font-size: 1.3em
       font-family: $h-font-stack
       font-weight: 700
 
@@ -647,7 +654,7 @@ nav#mobile.on
 //Single page styling
 
 section.single
-  max-width: $max-width
+  max-width: 1200px
   margin: 0 auto
   padding: 40px 10px
 
@@ -667,8 +674,6 @@ section.single
       font-size: 0.8em
       font-family: $h-font-stack
 
-
-
     h4
       font-weight: 100
       text-transform: uppercase
@@ -679,20 +684,25 @@ section.single
     margin-top: 40px
 
   h2
-    font-size: 2.6em
+    font-size: 2.8em
     color: $text-color
 
   article
+
     p
       font-family: $p-font-stack
       font-size: 1.2em
       max-width: 750px
-      margin: 0 auto 20px auto
+      margin: 0 auto 30px auto
+
+      a:hover
+        text-decoration: underline
 
     p:first-of-type
       margin-top: 30px
-      font-size: 1.5em
+      font-size: 1.6em
       font-weight: 100
+      margin-bottom: 50px
 
     iframe
       margin: 0 auto
@@ -702,13 +712,244 @@ section.single
       width: 100%
       height: auto
 
+    blockquote p
+      border-left: 5px solid $light-blue
+      padding-left: 30px
+      max-width: 40%
+      margin: 40px 40px 40px 0px !important
+      float: left
+      font-size: 1.8em
+
 
 section.featured-header
   position: relative
-  width: 100vw
+  width: 100%
   height: 100vh
   background-size: cover
-  background-position: op
-  z-index: -1
-  border-bottom: 1px solid #dfdfdf
+  background-position: top
+  z-index: 0
   margin-top: -100px
+
+  div.grad
+    position: absolute
+    bottom: 0
+    top: 0
+    left: 0
+    right: 0
+    background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0) 51%, rgba(0,0,0,0.5) 100%)
+    background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 51%,rgba(0,0,0,0.5) 100%)
+    background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 51%,rgba(0,0,0,0.5) 100%)
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#33000000',GradientType=0 )
+    z-index: 1
+
+  div.overlay
+    position: absolute
+    bottom: 0
+    width: 100%
+    background-color: rgba(48,80,125,0.6)
+    z-index: 2
+
+    div.meta
+      max-width: $max-width
+      margin: 40px auto
+      color: $background-color
+
+      a:hover
+        text-decoration: underline
+
+      hr
+        width: 60px
+        border: 3px solid $highlight
+        margin-top: 2px
+        margin-bottom: 15px
+
+      h4
+        font-weight: 100
+        text-transform: uppercase
+        font-size: 1em
+        margin-top: 5px
+        z-index: 3
+
+        a
+          color: $highlight
+
+      h4 p
+        max-width: 600px
+        font-weight: 100
+        font-size: 1em
+        margin-top: 5px
+        z-index: 3
+        color: $background-color
+        font-family: $h-font-stack
+        text-transform: none
+        text-shadow: 0px 0px 40px rgba(0,0,0,0.2)
+
+
+
+      h2
+        font-size: 3em
+        color: $background-color
+        text-shadow: 0px 0px 40px rgba(0,0,0,0.2)
+
+section.featured-bar
+  padding: 20px
+  background-color: $light-grey
+  border-bottom: 1px solid #dfdfdf
+
+  div
+    max-width: $max-width
+    margin: 0 auto
+
+    h4
+      text-transform: uppercase
+      font-weight: 100
+      color: $text-color
+      font-size: 0.9em
+
+      a#tag
+        text-transform: uppercase
+        color: $light-blue
+        margin-left: 3px
+
+
+
+article div.wp-caption
+  p.wp-caption-text
+    font-size: 0.9em
+    color: #505050
+    margin: 0
+
+article div.wp-caption.alignright
+  float: right
+  margin: 40px 0px 40px 40px
+  max-width: 40%
+
+article div.wp-caption.alignleft
+  float: left
+  margin: 40px 40px 40px 0px
+  max-width: 40%
+
+article div.wp-caption.alignnone, article div.wp-caption.aligncenter
+  float: none
+  margin: 50px 50px 50px 50px
+
+article.related#front
+  background-color: #efefef
+  padding-bottom: 30px
+
+//Archive page
+h2.archive
+  color: $blue
+  text-transform: uppercase
+  margin: 20px 20px 0px 20px
+  text-align: center
+  font-size: 1.8em
+
+h5.archive p
+  text-align: center
+  font-size: 1em
+  color: #969696
+  text-transform: uppercase
+  font-family: $h-font-stack
+  margin: 0px 5px 20px 5px
+  font-weight: 100
+
+div.tile-row.archive
+  display: block !important
+
+div.pagination
+  background-color: $light-grey
+  padding: 0px 40px 50px 40px
+  text-align: center
+  font-family: $h-font-stack
+  font-size: 1.2em
+  display: flex
+  display: -webkit-flex
+  flex-direction: row
+  -webkit-flex-direction: row
+  align-items: center
+  justify-content: center
+  color: $text-color
+
+  a.page-numbers
+    display: flex
+    display: -webkit-flex
+    align-items: center
+    justify-content: center
+    height: 30px
+    padding: 5px
+    background-color: #dfdfdf
+    color: $light-blue
+    margin: 5px
+    font-size: 1em
+    font-family: $h-font-stack
+
+  span.page-numbers.current
+    display: flex
+    display: -webkit-flex
+    align-items: center
+    justify-content: center
+    height: 30px
+    padding: 5px
+    background-color: $blue
+    color: $background-color
+    margin: 5px
+    font-size: 1em
+    font-family: $h-font-stack
+
+
+div.featured-box
+  height: 400px
+  width: 100%
+  margin: 10px 0px 20px 0px
+  overflow: hidden
+  position: relative
+
+  img.feature-image
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    min-width: 100%
+    min-height: 100%
+
+  div.title
+    position: absolute
+    width: 100%
+    z-index: 3
+    bottom: 0
+    padding: 20px
+    pointer-events: none
+    background-color: rgba(36, 67, 114, 0.7)
+
+    h2
+      color: $background-color
+      font-weight: 800
+      text-shadow: 0px 0px 10px rgba(0,0,0,0.4)
+      margin-top: 5px
+      font-size: 2em
+
+    h4 a
+      color: $background-color
+      font-size: 0.8em
+      font-weight: 100
+      background-color: $blue
+      padding: 2px 4px 2px 1px
+      margin-bottom: 10px
+
+    p
+      color: $background-color
+      font-size: 0.8em
+      font-weight: 100
+      margin-top: 5px
+      font-family: $h-font-stack
+      max-width: 500px
+
+    h5
+      margin: 6px 0px 0px 0px
+      font-size: 0.7em
+      color: $background-color
+      font-weight: 100
+      z-index: 2
+      text-transform: uppercase

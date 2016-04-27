@@ -20,7 +20,6 @@
         <a href="<?php the_permalink() ?>">
           <div class="hero-box">
             <img class="hero-image" src="<?php echo $feat; ?>"/>
-            <div class="overlay"></div>
             <div class="title">
               <h4><?php the_category("  ") ?></h4>
               <h2><?php the_title();?></h2>

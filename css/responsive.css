@@ -7,7 +7,11 @@
     display: inline-block !important; }
 
   #mobilehide, .mobilehide {
-    display: none !important; } }
+    display: none !important; }
+
+  article div.wp-caption p.wp-caption-text {
+    font-size: 0.9em !important;
+    margin: 2px 0px 30px 0px !important; } }
 @media screen and (max-width: 800px) {
   section#top-bar {
     display: none; }
@@ -29,11 +33,47 @@
     margin-bottom: 20px;
     height: 250px; }
     div.hero-box div.overlay {
-      height: 200px; } }
+      height: 200px; }
+
+  section.single {
+    padding: 10px; }
+    section.single article p:first-of-type {
+      font-size: 1.3em;
+      margin: 20px 0px 20px 0px; }
+    section.single article p {
+      font-size: 1.1em; }
+
+  section.featured-header {
+    height: 107vh; }
+    section.featured-header div.overlay div.meta {
+      margin: 20px auto;
+      padding: 15px; }
+      section.featured-header div.overlay div.meta h4 {
+        font-size: 1em; }
+      section.featured-header div.overlay div.meta h4 p {
+        font-size: 0.9em; }
+      section.featured-header div.overlay div.meta h2 {
+        font-size: 2em; } }
 @media screen and (max-width: 600px) {
   div.hero-box {
     height: 300px !important; }
     div.hero-box div.overlay {
-      height: 150px; } }
+      height: 150px; }
+
+  article div.wp-caption.alignright, article div.wp-caption.alignleft, article div.wp-caption.alignnone, article div.wp-caption.aligncenter {
+    float: none;
+    margin: 20px 0px 20px 0px;
+    max-width: 100%; }
+
+  section.single article blockquote p {
+    width: 100%;
+    max-width: 100%; } }
+@media screen and (min-width: 1400px) {
+  section.featured-header div.overlay div.meta {
+    padding-bottom: 30px; }
+    section.featured-header div.overlay div.meta h4 {
+      font-size: 1.2em; }
+    section.featured-header div.overlay div.meta h2 {
+      font-size: 3.5em; } }
 
 /*# sourceMappingURL=responsive.css.map */
